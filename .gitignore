@@ -1,0 +1,18 @@
+# Exclure le répertoire des dépendances gérées par Composer
+/vendor/
+
+# Exclure le fichier de verrouillage de Composer
+/composer.lock
+
+# Exclure le fichier de configuration des variables d'environnement
+/.env
+
+# Exclure le répertoire de la base de données
+/Database/
+
+# Exclure tous les sous-répertoires et fichiers dans le dossier 'tools'
+/tools/**/
+
+# Exclure fichiers nécéssaires au developpement supplémentaires
+
+/comptesutilisateur.txt

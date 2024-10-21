@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- Définition d'un ensemble de règles nommé "Mon projet" -->
+<ruleset name="Mon projet">
+    <!-- Référence au standard PSR-12 -->
+    <rule ref="PSR12" />
+    
+    <!-- Active la coloration syntaxique dans la sortie -->
+    <arg name="colors" />
+    
+    <!-- Affiche les progrès de l'analyse -->
+    <arg value="p" />
+    
+    <!-- Fichiers et répertoires à analyser -->
+    <file>index.php</file>
+    <file>app</file>
+</ruleset>

@@ -1,0 +1,220 @@
+/**
+ * Styles généraux pour le site web
+ *
+ * Ce fichier contient les styles CSS pour l'ensemble du site, y compris
+ * la mise en page générale, les styles des livres sur la page d'accueil,
+ * et les styles pour la page de détails d'un livre.
+ *
+ * @package MonSiteDeLivres
+ * @author  Votre Nom
+ * @version 1.0
+ */
+
+/* Réinitialisation des marges et paddings pour tous les éléments */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* S'assure que les images ne dépassent pas leur conteneur */
+img {
+  max-width: 100%;
+}
+
+/* Style de base pour les formulaires */
+form {
+  width: 100%;
+  max-width: 781px;
+  margin: auto;
+}
+
+/* Empêche le redimensionnement des zones de texte */
+textarea {
+  resize: none;
+}
+
+/* Style pour les messages d'erreur */
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+/* style pour le titre de la page */
+#titrePage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+}
+
+/* Ajuste la taille du logo dans la barre de navigation */
+nav .navbar-brand img {
+  height: 50px !important;
+  width: auto;
+}
+
+/**
+ * Styles pour la page d'accueil
+ */
+
+/* Styles globaux */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Conteneur pour tous les livres */
+.livres-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Styles pour les cartes de livre */
+.livre-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 300px;
+  min-width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+/* Effet de survol sur les cartes de livre */
+.livre-card:hover {
+  transform: scale(1.05);
+}
+
+/* Titre du livre */
+.livre-title {
+  background-color: #f5f5f5;
+  color: #000;
+  padding: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Image du livre */
+.livre-image {
+  width: 150px;
+  height: auto;
+  margin: 10px auto;
+}
+
+/* Corps de la carte de livre */
+.livre-body {
+  padding: 10px;
+}
+
+/* Lien vers les détails du livre */
+.livre-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+/* Effet de survol sur le lien */
+.livre-link:hover {
+  background-color: #0056b3;
+}
+
+/* Design responsive */
+@media (max-width: 768px) {
+  .livre-card {
+    width: 100%;
+    max-width: 350px;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .livres-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .livre-card {
+    width: 100%;
+  }
+}
+
+/**
+ * Styles pour la page de détails d'un livre
+ */
+
+/* Conteneur pour les détails du livre */
+.livre-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  gap: 20px;
+}
+
+/* Conteneur de l'image */
+.livre-image-container {
+  flex: 1 1 300px;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Image du livre */
+.livre-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Conteneur des détails du livre */
+.livre-details {
+  flex: 1 1 300px;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Paragraphes dans les détails du livre */
+.livre-details p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+/* Design responsive pour la page de détails */
+@media (max-width: 768px) {
+  .livre-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .livre-details {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .livre-container {
+    margin: 10px;
+  }
+
+  .livre-details p {
+    font-size: 1rem;
+  }
+}
