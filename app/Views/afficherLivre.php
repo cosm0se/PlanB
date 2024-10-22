@@ -25,7 +25,9 @@ ob_start();
         <p><strong>Uploadé par :</strong> <?= $livre->getUploader() ?></p>
     </div>
 </div>
-div#
+<div id="descriptionLivre">
+
+</div>
 <?php
 // Définition du titre de la page
 $titre = $livre->getTitre();

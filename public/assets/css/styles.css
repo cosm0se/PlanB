@@ -22,6 +22,20 @@
   font-weight: normal;
 }
 
+/* animations pour le fade in des card */
+/* Initialement, les cartes sont cachées */
+.livre-card {
+  opacity: 0;
+  transform: translateY(200px); /* Décale légèrement vers le bas */
+  transition: opacity 5s ease-out, transform 2s ease-in-out; /* Animation fluide */
+}
+
+/* Classe à ajouter lorsque la carte est visible */
+.livre-card.visible {
+  opacity: 1; /* Complètement visible */
+  transform: translateY(0); /* Ramène à sa position initiale */
+}
+
 /* Réinitialisation des marges et paddings pour tous les éléments */
 
 * {

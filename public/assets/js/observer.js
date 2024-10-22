@@ -1,12 +1,12 @@
 const animationTitre = document.querySelector("h1");
 
 const animeTitre = [
-  { transform: "translateX(-300px)" }, // Commence hors de l'écran (à gauche)
-  { transform: "translateX(0%)" }, // S'arrête à sa position d'origine (au centre)
+  { transform: "scale(0,0)" }, // Commence hors de l'écran (à gauche)
+  { transform: "scale(1,1)" }, // S'arrête à sa position d'origine (au centre)
 ];
 
 const optionsTitre = {
-  duration: 1000, // Durée de l'animation (en millisecondes)
+  duration: 500, // Durée de l'animation (en millisecondes)
   fill: "forwards", // Laisse l'élément à sa position finale après l'animation
   iterations: 1, // L'animation ne se répète pas
 };
@@ -46,4 +46,29 @@ links.forEach((link) => {
   link.addEventListener("mouseenter", () => {
     link.animate(shakeKeyframes, shakeOptions);
   });
+});
+
+// Sélectionne toutes les cartes de livres
+const livreCards = document.querySelectorAll(".livre-card");
+
+// Fonction de callback pour IntersectionObserver
+const handleIntersection = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // Ajoute la classe visible lorsqu'elle est à 50% visible
+      entry.target.classList.add("visible");
+      // Optionnel: arrêter d'observer l'élément après qu'il soit visible
+      observer.unobserve(entry.target);
+    }
+  });
+};
+
+// Création de l'IntersectionObserver
+const observer = new IntersectionObserver(handleIntersection, {
+  threshold: 0.5, // 50% de visibilité avant déclenchement
+});
+
+// Observer chaque carte de livre
+livreCards.forEach((card) => {
+  observer.observe(card);
 });
