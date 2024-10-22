@@ -22,9 +22,10 @@ ob_start();
         <!-- Affichage des détails du livre -->
         <p><strong>Titre :</strong> <?= $livre->getTitre() ?></p>
         <p><strong>Nombre de pages :</strong> <?= $livre->getNbreDePages() ?></p>
-        <p><strong>Uploader :</strong> <?= $livre->getUploader() ?></p>
+        <p><strong>Uploadé par :</strong> <?= $livre->getUploader() ?></p>
     </div>
 </div>
+div#
 <?php
 // Définition du titre de la page
 $titre = $livre->getTitre();

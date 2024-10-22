@@ -27,7 +27,7 @@ ob_start();
             <!-- Informations supplémentaires et lien -->
             <div class="livre-body">
                 <!-- Nom de l'uploader -->
-                <p>Uploader : <?= $livre->getUploader(); ?></p>
+                <p>Uploadé par : <?= $livre->getUploader(); ?></p>
 
                 <!-- Lien vers la page détaillée du livre -->
                 <a class="livre-link" href="<?= SITE_URL ?>livres/l/<?= $livre->getId(); ?>">En savoir plus ...</a>

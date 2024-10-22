@@ -9,8 +9,21 @@
  * @author  Votre Nom
  * @version 1.0
  */
+@font-face {
+  font-family: "anybody";
+  src: url("../fonts/anybody.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "trash";
+  src: url("../fonts/trash.TTF") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
 
 /* Réinitialisation des marges et paddings pour tous les éléments */
+
 * {
   margin: 0;
   padding: 0;
@@ -40,29 +53,33 @@ textarea {
   margin-top: 5px;
 }
 /* style pour le titre de la page */
-#titrePage {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background-color: #000;
-}
-
 /* Ajuste la taille du logo dans la barre de navigation */
 nav .navbar-brand img {
   height: 50px !important;
   width: auto;
 }
-
+/* zone d'affichage du titre */
+.titreprincipal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100px;
+  background-color: #f8c100;
+}
 /**
  * Styles pour la page d'accueil
  */
 
 /* Styles globaux */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "anybody", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+h1 {
+  font-family: "trash" !important;
 }
 
 /* Conteneur pour tous les livres */
@@ -76,7 +93,7 @@ body {
 
 /* Styles pour les cartes de livre */
 .livre-card {
-  background-color: #fff;
+  background-color: #eaeaea;
   border: 1px solid #ddd;
   border-radius: 10px;
   width: 300px;
@@ -90,15 +107,17 @@ body {
 /* Effet de survol sur les cartes de livre */
 .livre-card:hover {
   transform: scale(1.05);
+  background-color: #eaeaea;
 }
 
 /* Titre du livre */
 .livre-title {
-  background-color: #f5f5f5;
-  color: #000;
-  padding: 10px;
+  background-color: #eaeaea;
+  color: #222021;
+  padding: 15px;
+  font-family: "trash";
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 100;
   margin: 0;
 }
 
@@ -113,13 +132,16 @@ body {
 .livre-body {
   padding: 10px;
 }
+.livre-body p {
+  color: #222021;
+}
 
 /* Lien vers les détails du livre */
 .livre-link {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 12px;
-  background-color: #007bff;
+  background-color: #f8c100;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -128,7 +150,7 @@ body {
 
 /* Effet de survol sur le lien */
 .livre-link:hover {
-  background-color: #0056b3;
+  background-color: #3342fc !important;
 }
 
 /* Design responsive */
@@ -137,6 +159,9 @@ body {
     width: 100%;
     max-width: 350px;
     min-width: auto;
+  }
+  .titreprincipal {
+    padding: 50px;
   }
 }
 
@@ -158,7 +183,6 @@ body {
 /* Conteneur pour les détails du livre */
 .livre-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin: 20px;
@@ -167,7 +191,7 @@ body {
 
 /* Conteneur de l'image */
 .livre-image-container {
-  flex: 1 1 300px;
+  width: 100%;
   max-width: 500px;
   display: flex;
   justify-content: center;
@@ -176,17 +200,22 @@ body {
 /* Image du livre */
 .livre-image {
   max-width: 100%;
-  height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Conteneur des détails du livre */
 .livre-details {
-  flex: 1 1 300px;
-  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  width: 100%;
+  height: 300px;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #f8c100;
+  color: #222021;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

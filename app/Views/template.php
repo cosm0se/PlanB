@@ -27,12 +27,13 @@
     <link rel="stylesheet" href="<?= SITE_URL ?>assets/css/styles.css">
     <!-- Script JavaScript principal -->
     <script src="<?= SITE_URL ?>assets/js/main.js" defer></script>
+    <script src="<?= SITE_URL ?>assets/js/observer.js" defer></script>
     <title>Biblio | <?= $titre; ?></title>
 </head>
 
 <body>
     <!-- Barre de navigation -->
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
             <!-- Logo et bouton de navigation pour mobile -->
             <a class="navbar-brand" href="/"><img src="<?= SITE_URL ?>logo.png" alt=""></a>
@@ -85,8 +86,11 @@
     </nav>
 
     <!-- Contenu principal de la page -->
-    <div id="container" class="m-2">
-        <h1 class="rounded border border-dark p-2 text-center text-white bg-info"><?= $titre ?></h1>
+    <div id="container">
+        <div class="titreprincipal">
+            <h1><?= $titre ?></h1>
+        </div>
+
         <?= $content ?>
     </div>
 
