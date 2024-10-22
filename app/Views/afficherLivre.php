@@ -26,7 +26,9 @@ ob_start();
     </div>
 </div>
 <div id="descriptionLivre">
+    <p><strong>Description de <?= $livre->getUploader() ?> a propos du livre :
 
+        </strong> <?= $livre->getDescription() ?></p>
 </div>
 <?php
 // Définition du titre de la page

@@ -42,14 +42,14 @@ class LivresRepository extends AbstractConnexion
     public function chargementLivresBdd()
     {
         // Requête SQL pour récupérer tous les livres avec les informations de l'utilisateur
-        $req = $this->getConnexionBdd()->prepare("SELECT id_livre, titre, nbre_de_pages, url_image, text_alternatif, l.id_utilisateur, identifiant FROM livre l LEFT JOIN utilisateur u ON l.id_utilisateur = u.id_utilisateur;");
+        $req = $this->getConnexionBdd()->prepare("SELECT id_livre, titre, nbre_de_pages, url_image, text_alternatif, description, l.id_utilisateur, identifiant FROM livre l LEFT JOIN utilisateur u ON l.id_utilisateur = u.id_utilisateur;");
         $req->execute();
         $livresImportes = $req->fetchALL(PDO::FETCH_ASSOC);
         $req->closeCursor();
 
         // Création des objets Livre et ajout au tableau
         foreach ($livresImportes as $livre) {
-            $newLivre = new Livre($livre['id_livre'], $livre['titre'], $livre['nbre_de_pages'], $livre['url_image'], $livre['text_alternatif'], $livre['id_utilisateur'], $livre['identifiant'] !== null ? $livre['identifiant'] : "Pas d'uploader");
+            $newLivre = new Livre($livre['id_livre'], $livre['titre'], $livre['nbre_de_pages'], $livre['url_image'], $livre['text_alternatif'], $livre['id_utilisateur'], $livre['identifiant'] !== null ? $livre['identifiant'] : "Pas d'uploader", $livre['description']);
             $this->ajouterLivre($newLivre);
         }
         return $this->getLivres();
@@ -71,7 +71,7 @@ class LivresRepository extends AbstractConnexion
 
         // Création des objets Livre et ajout au tableau
         foreach ($livresImportes as $livre) {
-            $newLivre = new Livre($livre['id_livre'], $livre['titre'], $livre['nbre_de_pages'], $livre['url_image'], $livre['text_alternatif'], $livre['id_utilisateur'], $_SESSION['utilisateur']['identifiant']);
+            $newLivre = new Livre($livre['id_livre'], $livre['titre'], $livre['nbre_de_pages'], $livre['url_image'], $livre['text_alternatif'], $livre['description'], $livre['id_utilisateur'], $_SESSION['utilisateur']['identifiant']);
             $this->ajouterLivre($newLivre);
         }
         return $this->getLivres();
@@ -86,14 +86,15 @@ class LivresRepository extends AbstractConnexion
     public function getLivreById($idLivre)
     {
         // Requête SQL pour récupérer un livre spécifique avec les informations de l'utilisateur
-        $req = $this->getConnexionBdd()->prepare("SELECT l.id_livre, l.titre, l.nbre_de_pages, l.url_image, l.text_alternatif, l.id_utilisateur, u.identifiant FROM livre l LEFT JOIN utilisateur u ON l.id_utilisateur = u.id_utilisateur WHERE l.id_livre = ?");
+        $req = $this->getConnexionBdd()->prepare("SELECT l.id_livre, l.titre, l.nbre_de_pages, l.url_image, l.text_alternatif,l.description, l.id_utilisateur, u.identifiant FROM livre l LEFT JOIN utilisateur u ON l.id_utilisateur = u.id_utilisateur WHERE l.id_livre = ?");
         $req->execute([$idLivre]);
         $livresImportes = $req->fetchALL(PDO::FETCH_ASSOC);
         $req->closeCursor();
 
         // Création de l'objet Livre s'il est trouvé
         foreach ($livresImportes as $livre) {
-            return new Livre($livre['id_livre'], $livre['titre'], $livre['nbre_de_pages'], $livre['url_image'], $livre['text_alternatif'], $livre['id_utilisateur'], $livre['identifiant'] !== null ? $livre['identifiant'] : "Pas d'uploader");
+            return new Livre($livre['id_livre'], $livre['titre'], $livre['nbre_de_pages'], $livre['url_image'], $livre['text_alternatif'], $livre['id_utilisateur'], $livre['identifiant'] !== null ? $livre['identifiant'] : "Pas d'uploader", $livre['description']);
+            $this->ajouterLivre($newLivre);
         }
         return null;
     }
@@ -107,18 +108,19 @@ class LivresRepository extends AbstractConnexion
      * @param string $nomImage Le nom de l'image du livre
      * @return void
      */
-    public function ajouterLivreBdd(string $titre, int $nbreDePages, string $textAlternatif, string $nomImage)
+    public function ajouterLivreBdd(string $titre, int $nbreDePages, string $textAlternatif, string $nomImage, string $description)
     {
         $idUtilisateur = $_SESSION['utilisateur']['id_utilisateur'];
         // Requête SQL pour insérer un nouveau livre
-        $req = "INSERT INTO livre (titre, nbre_de_pages, url_image ,text_alternatif, id_utilisateur) VALUES 
-                (:titre, :nbre_de_pages, :url_image, :text_alternatif, :id_utilisateur)";
+        $req = "INSERT INTO livre (titre, nbre_de_pages, url_image, text_alternatif, id_utilisateur, description) VALUES 
+            (:titre, :nbre_de_pages, :url_image, :text_alternatif, :id_utilisateur, :description)";
         $stmt = $this->getConnexionBdd()->prepare($req);
         $stmt->bindValue(":titre", $titre, PDO::PARAM_STR);
         $stmt->bindValue(":nbre_de_pages", $nbreDePages, PDO::PARAM_INT);
         $stmt->bindValue(":url_image", $nomImage, PDO::PARAM_STR);
         $stmt->bindValue(":text_alternatif", $textAlternatif, PDO::PARAM_STR);
         $stmt->bindValue(":id_utilisateur", $idUtilisateur, PDO::PARAM_INT);
+        $stmt->bindValue(":description", $description, PDO::PARAM_STR); // Ajout de la description
         $stmt->execute();
         $stmt->closeCursor();
     }
@@ -130,16 +132,16 @@ class LivresRepository extends AbstractConnexion
      * @param int $nbreDePages Le nouveau nombre de pages du livre
      * @param string $textAlternatif Le nouveau texte alternatif pour l'image du livre
      * @param string $nomImage Le nouveau nom de l'image du livre
+     * @param string $description la nouvelle description
      * @param int $idLivre L'ID du livre à modifier
      * @return void
      */
-    public function modificationLivreBdd(string $titre, int $nbreDePages, string $textAlternatif, string $nomImage, int $idLivre)
+    public function modificationLivreBdd(string $titre, int $nbreDePages, string $textAlternatif, string $description, string $nomImage, int $idLivre)
     {
-        // Détermine l'ID de l'utilisateur (admin peut modifier n'importe quel livre)
         $idUtilisateur = $_SESSION['utilisateur']['role'] !== 'ROLE_ADMIN' ? $_SESSION['utilisateur']['id_utilisateur'] : $this->getLivreById($idLivre)->getIdUtilisateur();
 
         // Requête SQL pour mettre à jour un livre
-        $req = "UPDATE livre SET titre = :titre, nbre_de_pages = :nbre_de_pages, text_alternatif = :text_alternatif, url_image = :url_image, id_utilisateur = :id_utilisateur WHERE id_livre = :id_livre";
+        $req = "UPDATE livre SET titre = :titre, nbre_de_pages = :nbre_de_pages,  url_image = :url_image,text_alternatif = :text_alternatif, id_utilisateur = :id_utilisateur, description = :description WHERE id_livre = :id_livre";
         $stmt = $this->getConnexionBdd()->prepare($req);
         $stmt->bindValue(":id_livre", $idLivre, PDO::PARAM_INT);
         $stmt->bindValue(":titre", $titre, PDO::PARAM_STR);
@@ -147,6 +149,7 @@ class LivresRepository extends AbstractConnexion
         $stmt->bindValue(":url_image", $nomImage, PDO::PARAM_STR);
         $stmt->bindValue(":text_alternatif", $textAlternatif, PDO::PARAM_STR);
         $stmt->bindValue(":id_utilisateur", $idUtilisateur, PDO::PARAM_INT);
+        $stmt->bindValue(":description", $description, PDO::PARAM_STR); // Ajout de la description
         $stmt->execute();
         $stmt->closeCursor();
     }

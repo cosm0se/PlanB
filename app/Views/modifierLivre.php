@@ -62,6 +62,21 @@ require '../app/Views/showAlert.php';
             <?php endif; ?>
         </div>
 
+        <!-- Champ pour la description du livre -->
+        <div class="form-group my-4">
+            <label for="description">Description : </label>
+            <textarea class="form-control" id="description" name="description"><?= isset($_SESSION['old_values']['description']) ? htmlspecialchars($_SESSION['old_values']['description']) : htmlspecialchars($livre->getDescription()); ?></textarea>
+            <!-- Affichage des erreurs pour le texte alternatif -->
+            <?php if (isset($_SESSION['erreurs']['description'])): ?>
+                <div class="text-danger">
+                    <?php foreach ($_SESSION['erreurs']['description'] as $erreur): ?>
+                        <p><?= htmlspecialchars($erreur) ?></p>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+
+
         <!-- Aperçu de l'image actuelle du livre -->
         <img id="image-preview" src="<?= SITE_URL ?>images/<?= htmlspecialchars($livre->getUrlImage()); ?>" alt="<?= htmlspecialchars($livre->getTextAlternatif()); ?>">
 

@@ -21,6 +21,7 @@ class Livre
     private string $textAlternatif;
     private int|null $idUtilisateur;
     private string $uploader;
+    private string $description;
 
     /**
      * Constructeur de la classe Livre
@@ -32,6 +33,7 @@ class Livre
      * @param string $textAlternatif Texte alternatif pour l'image de couverture
      * @param int|null $idUtilisateur Identifiant de l'utilisateur associé au livre (peut être null)
      * @param string $uploader Nom de l'utilisateur qui a uploadé le livre
+     * @param string $description du livre par l'utilisateur
      */
     public function __construct(
         int $id,
@@ -40,7 +42,8 @@ class Livre
         string $urlImage,
         string $textAlternatif,
         int|null $idUtilisateur,
-        string $uploader
+        string $uploader,
+        string $description
     ) {
         $this->id = $id;
         $this->titre = $titre;
@@ -49,6 +52,7 @@ class Livre
         $this->textAlternatif = $textAlternatif;
         $this->idUtilisateur = $idUtilisateur;
         $this->uploader = $uploader;
+        $this->description = $description;
     }
 
     /**
@@ -209,6 +213,30 @@ class Livre
     public function setUploader(string $uploader): self
     {
         $this->uploader = $uploader;
+        return $this;
+    }
+
+    /**
+     * Get the value of description
+     *
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set the value of description
+     *
+     * @param string $description
+     *
+     * @return self
+     */
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
         return $this;
     }
 }

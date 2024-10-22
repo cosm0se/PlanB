@@ -240,6 +240,14 @@ h1 {
   margin: 10px 0;
 }
 
+#descriptionLivre {
+  display: flex;
+  padding: 20px;
+  background-color: #222021;
+  height: 500px;
+  white-space: pre-line;
+}
+
 /* Design responsive pour la page de détails */
 @media (max-width: 768px) {
   .livre-container {

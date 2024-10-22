@@ -115,7 +115,7 @@ class LivreController
             exit;
         }
 
-        $this->repositoryLivres->ajouterLivreBdd($_POST['titre'], (int)$_POST['nbre-de-pages'], $_POST['text-alternatif'], $nomImage);
+        $this->repositoryLivres->ajouterLivreBdd($_POST['titre'], (int)$_POST['nbre-de-pages'], $_POST['text-alternatif'], $nomImage, $_POST['description']);
         $_SESSION['alert'] = [
             "type" => "success",
             "message" => "Le livre $_POST[titre] a été ajouté avec succès!"
@@ -167,7 +167,7 @@ class LivreController
             }
             $imageActuelle = Utils::ajoutImage($imageUpload, "images/");
         }
-        $this->repositoryLivres->modificationLivreBdd($_POST['titre'], (int)$_POST['nbre-de-pages'], $_POST['text-alternatif'], $imageActuelle, $idLivre);
+        $this->repositoryLivres->modificationLivreBdd($_POST['titre'], (int)$_POST['nbre-de-pages'], $_POST['text-alternatif'], $_POST['description'], $imageActuelle, $idLivre);
         $_SESSION['alert'] = [
             "type" => "success",
             "message" => "Le livre $_POST[titre] a été modifié avec succès!"

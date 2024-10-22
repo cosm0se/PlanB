@@ -63,6 +63,20 @@ require '../app/Views/showAlert.php';
             <?php endif; ?>
         </div>
 
+        <!-- Champ pour la description du livre -->
+        <div class="form-group my-4">
+            <label for="description">Description : </label>
+            <textarea class="form-control" id="description" name="description"><?= isset($_SESSION['old_values']['description']) ? htmlspecialchars($_SESSION['old_values']['description']) : '' ?></textarea>
+            <!-- Affichage des erreurs pour la description -->
+            <?php if (isset($_SESSION['erreurs']['description'])): ?>
+                <div class="text-danger">
+                    <?php foreach ($_SESSION['erreurs']['description'] as $erreur): ?>
+                        <p><?= htmlspecialchars($erreur) ?></p>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+
         <!-- Prévisualisation de l'image -->
         <img src="" id="image-preview" alt="">
 
