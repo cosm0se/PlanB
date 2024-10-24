@@ -26,13 +26,13 @@ ob_start() ?>
                 <th>Image</th>
                 <th>Titre</th>
                 <th>Nombre de pages</th>
-                <th>Description</th>
+
                 <th colspan="2">Actions</th>
             </tr>
             <?php
             // Boucle sur chaque livre du tableau
             foreach ($livresTab as $livre) : ?>
-                <tr>
+                <tr class="useurs">
                     <!-- Affichage de l'image du livre -->
                     <td class="align-middle"><img
                             src="<?= SITE_URL ?>images/<?= $livre->getUrlImage(); ?>"
@@ -43,7 +43,7 @@ ob_start() ?>
                     </td>
                     <!-- Affichage du nombre de pages -->
                     <td class="align-middle"><?= $livre->getNbreDePages(); ?></td>
-                    <td class="align-middle"><?= $livre->getDescription(); ?></td>
+
                     <!-- Bouton pour modifier le livre -->
                     <td class="align-middle"><a
                             href="<?= SITE_URL ?>livres/m/<?= $livre->getId(); ?>"

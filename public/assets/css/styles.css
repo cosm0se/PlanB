@@ -9,6 +9,8 @@
  * @author  Votre Nom
  * @version 1.0
  */
+
+/* font persos */
 @font-face {
   font-family: "anybody";
   src: url("../fonts/anybody.ttf") format("truetype");
@@ -37,7 +39,6 @@
 }
 
 /* Réinitialisation des marges et paddings pour tous les éléments */
-
 * {
   margin: 0;
   padding: 0;
@@ -53,6 +54,7 @@ form {
   width: 100%;
   max-width: 781px;
   margin: auto;
+  padding: 20px 0;
 }
 
 /* Empêche le redimensionnement des zones de texte */
@@ -66,11 +68,16 @@ textarea {
   font-size: 0.9em;
   margin-top: 5px;
 }
+
 /* style pour le titre de la page */
 /* Ajuste la taille du logo dans la barre de navigation */
 nav .navbar-brand img {
   height: 50px !important;
   width: auto;
+}
+/* couleur nav*/
+.bg-dark {
+  background-color: #3342fc !important;
 }
 /* zone d'affichage du titre */
 .titreprincipal {
@@ -91,9 +98,18 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #222021 !important;
 }
 h1 {
   font-family: "trash" !important;
+}
+.btn-success {
+  margin-bottom: 20px;
+}
+.alert-success {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 /* Conteneur pour tous les livres */
@@ -104,17 +120,28 @@ h1 {
   padding: 20px;
   gap: 20px;
 }
+/* contenu pour UN LIVRE EN DETAIL */
+.livre-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 50px;
+  gap: 20px;
+}
 
 /* Styles pour les cartes de livre */
 .livre-card {
+  display: flex;
+  flex-direction: column;
   background-color: #eaeaea;
   border: 1px solid #ddd;
   border-radius: 10px;
-  width: 300px;
+  width: 285px;
   min-width: 250px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   overflow: hidden;
+  justify-content: space-around;
   transition: transform 0.2s ease;
 }
 
@@ -147,7 +174,8 @@ h1 {
   padding: 10px;
 }
 .livre-body p {
-  color: #222021;
+  color: #717171;
+  font-size: 13px;
 }
 
 /* Lien vers les détails du livre */
@@ -166,49 +194,16 @@ h1 {
 .livre-link:hover {
   background-color: #3342fc !important;
 }
-
-/* Design responsive */
-@media (max-width: 768px) {
-  .livre-card {
-    width: 100%;
-    max-width: 350px;
-    min-width: auto;
-  }
-  .titreprincipal {
-    padding: 50px;
-  }
-}
-
-@media (max-width: 480px) {
-  .livres-container {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .livre-card {
-    width: 100%;
-  }
-}
-
 /**
  * Styles pour la page de détails d'un livre
  */
 
-/* Conteneur pour les détails du livre */
-.livre-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-  gap: 20px;
-}
-
 /* Conteneur de l'image */
 .livre-image-container {
   width: 100%;
-  max-width: 500px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 /* Image du livre */
@@ -222,9 +217,7 @@ h1 {
 .livre-details {
   display: flex;
   flex-direction: column;
-  max-width: 700px;
   width: 100%;
-  height: 300px;
   align-items: center;
   justify-content: center;
   padding: 20px;
@@ -240,23 +233,139 @@ h1 {
   margin: 10px 0;
 }
 
+/* zone de description d'un livre fait par l'auteur */
 #descriptionLivre {
   display: flex;
-  padding: 20px;
-  background-color: #222021;
-  height: 500px;
+  padding: 50px;
+  margin: 100px 20px 150px 20px;
+  border-radius: 15px;
+  background-color: #3d3d3d;
+  min-height: 300px;
   white-space: pre-line;
 }
 
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  padding: 20px;
+  background-color: #f8c100;
+}
+
+#signature p {
+  margin-bottom: inherit !important;
+  font-family: "trash";
+  font-weight: bold;
+  color: #3342fc;
+  font-size: 30px;
+  padding: 0 10px;
+}
+.logo img {
+  max-height: 80px;
+}
+
+/* Design responsive */
+@media (max-width: 991px) {
+  .utilisateur-connecte {
+    display: none;
+  }
+  h1 {
+    font-size: 25px;
+  }
+
+  .livres-container {
+    flex-basis: 40%;
+  }
+  .livre-card {
+    width: 330px;
+  }
+  .livre-title {
+    padding: 10px;
+  }
+  .livre-body p {
+    margin-bottom: inherit;
+  }
+
+  /* gestion responsive du formulaire */
+  .align-middle,
+  .btn-warning,
+  .btn-danger {
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .livre-card {
+    min-width: auto;
+  }
+  .titreprincipal {
+    padding: 10px;
+  }
+  #signature p {
+    font-size: 20px;
+    text-align: center;
+  }
+  #descriptionLivre {
+    margin: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .livres-container {
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+  }
+
+  .livre-card {
+    width: 80%;
+  }
+  .livre-image {
+    width: 75px;
+  }
+  .livre-link {
+    padding: 6px 5px;
+    font-size: 12px;
+  }
+  .livre-title {
+    font-size: 1rem;
+  }
+}
+
 /* Design responsive pour la page de détails */
+
 @media (max-width: 768px) {
   .livre-container {
     flex-direction: column;
     align-items: flex-start;
   }
+  #container {
+    padding-bottom: 20px !important;
+  }
 
   .livre-details {
     margin-top: 20px;
+  }
+  h1 {
+    font-size: 25px;
+  }
+  .logo img {
+    max-height: 60px;
+  }
+  tbody {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+  tr.useurs {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px !important;
+    padding: 10px;
+  }
+  tr.table-dark {
+    display: none;
   }
 }
 
@@ -268,4 +377,27 @@ h1 {
   .livre-details p {
     font-size: 1rem;
   }
+  h1 {
+    font-size: 21px;
+  }
+  .logo img {
+    max-height: 40px;
+  }
+}
+@media (max-width: 360px) {
+  h1 {
+    font-size: 20px;
+  }
+  #signature p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 300px) {
+  h1 {
+    font-size: 16px;
+  }
+}
+
+#container {
+  padding-bottom: 250px;
 }

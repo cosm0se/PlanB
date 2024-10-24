@@ -1,12 +1,12 @@
 const animationTitre = document.querySelector("h1");
 
 const animeTitre = [
-  { transform: "scale(0,0)" }, // Commence hors de l'écran (à gauche)
-  { transform: "scale(1,1)" }, // S'arrête à sa position d'origine (au centre)
+  { transform: "scale(0,0)" }, // Commence a 0
+  { transform: "scale(1,1)" }, // fini a sa taille finale
 ];
 
 const optionsTitre = {
-  duration: 500, // Durée de l'animation (en millisecondes)
+  duration: 500, // Durée de l'animation (ms)
   fill: "forwards", // Laisse l'élément à sa position finale après l'animation
   iterations: 1, // L'animation ne se répète pas
 };
@@ -71,4 +71,20 @@ const observer = new IntersectionObserver(handleIntersection, {
 // Observer chaque carte de livre
 livreCards.forEach((card) => {
   observer.observe(card);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Récupère l'URL actuelle avec const
+  const currentUrl = window.location.href;
+
+  // Vérifie si l'URL correspond à la page d'un livre
+  if (currentUrl.includes("/livres/l/")) {
+    // Applique une transition pour le changement de couleur de fond
+    document.body.style.transition = "background-color 1s ease";
+
+    // Utilise setTimeout pour attendre 500ms avant de changer la couleur
+    setTimeout(function () {
+      document.body.style.backgroundColor = "#eaeaea";
+    }, 500);
+  }
 });

@@ -28,6 +28,7 @@
     <!-- Script JavaScript principal -->
     <script src="<?= SITE_URL ?>assets/js/main.js" defer></script>
     <script src="<?= SITE_URL ?>assets/js/observer.js" defer></script>
+    <script src="<?= SITE_URL ?>assets/js/voirPlus.js" defer></script>
     <title>Biblio | <?= $titre; ?></title>
 </head>
 
@@ -93,6 +94,18 @@
 
         <?= $content ?>
     </div>
+    <footer>
+        <div class="logo">
+            <img src="<?= SITE_URL ?>logo.png" alt="">
+        </div>
+        <div id="signature">
+            <p>Flixbooks 2024 - tout droits réservés</p>
+
+        </div>
+        <div class="logo">
+            <img src="<?= SITE_URL ?>logo.png" alt="">
+        </div>
+    </footer>
 
     <!-- Script Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

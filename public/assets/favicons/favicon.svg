@@ -1,3 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="256" height="256" viewBox="0 0 256 256"><image width="256" height="256" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAEAIAAACDgONyAAAEE0lEQVR42u3d0WnDQBBAwVxwVeoftbXpIIEYcZbeTAHmBIbH/uyumZmZLwBivnc/AIA9BAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiXrsf8PmOY2b3G2CX81xr9xu4igkAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBqzczce9/93ff127fOO/z/+T8TAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlHsAf7KvnDL3Bp7MBAAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAEPXa/QDgk919n757Ib8xAQBECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABEvXY/ACg7jpkrf/8819r9jZ/LBAAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAEPXa/YDPdxwzV/7+ea61+xuBIhMAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAEDUmpm5dt/93V19D+Bq7g3wDv//JzMBAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABEuQew3d33rfNs9uk/mQkAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACDKPQCAKBMAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQNQP+bRTbcyySYMAAAAASUVORK5CYII="></image><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
-@media (prefers-color-scheme: dark) { :root { filter: none; } }
-</style></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 110 116">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        filter: url(#drop-shadow-1);
+      }
+
+      .cls-2 {
+        fill: #3342fc;
+      }
+
+      .cls-3 {
+        fill: #e2ae07;
+      }
+
+      .cls-4 {
+        fill: #f8c100;
+      }
+
+      .cls-5 {
+        fill: #efdb9c;
+      }
+    </style>
+    <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="2.2" dy="2.2"/>
+      <feGaussianBlur result="blur" stdDeviation="1.47"/>
+      <feFlood flood-color="#000" flood-opacity=".4"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Stickers">
+    <g>
+      <path class="cls-1" d="M100.08,37.44c-4.68-29.45-9.62-32.36-11.73-33.6-1.82-1.07-4.27-1.53-8.17-1.53-7.36,0-20.28,1.74-32.93,4.43-19.68,4.19-25.05,7.65-26.91,9.36-1.41,1.05-3.75,3.73-9.7,13.26-7.59,12.15-7.59,13.26-7.59,14.79,0,11.68,3.93,29.84,5.62,37.1,1.43,6.16,2.97,11.96,4.34,16.32,1.96,6.28,3.38,10.16,7.57,10.82.31.05.68.08.99.08.08,0,.27,0,.27,0,27.04,0,59.69-7.66,68.7-14,4.42-3.12,10.32-17.44,11.7-23.67,1.91-7.14-1.73-30.64-2.17-33.35Z"/>
+      <g>
+        <path class="cls-3" d="M35.33,77.22c-3.14,5.59-7.54,16.3-13.48,25.38,26.65,0,57.86-7.68,65.31-12.93,2.3-1.62,8.4-14.56,9.52-20.97-20.15,1.86-42.13,6.78-61.35,8.52Z"/>
+        <path class="cls-4" d="M24.36,20.84c-.51-2.48-15.44,22.2-15.44,23.31,0,17.81,10.39,58.1,12.58,58.44,2.29.36,9.5-15.65,13.63-23.56.38-.72.76-.93.86-1.73.09-.73-8.14-38.1-11.63-56.46Z"/>
+        <path class="cls-5" d="M23.67,21.22c-2.87,5.53,7.17,58.07,11.12,60.51,6.54,4.04,58.65-7.41,61.59-11.99,2.54-3.96-4.06-56.74-11.01-60.83-5.81-3.42-58.5,6.15-61.7,12.31Z"/>
+        <polygon class="cls-2" points="63.53 47.66 61.28 37.77 66.5 36.58 67.93 42.89 77.33 40.76 75.9 34.45 75.9 34.45 73.12 22.21 40.36 29.65 49.19 68.55 67.34 64.42 65.15 54.82 79.81 51.49 78.19 44.33 63.53 47.66"/>
+      </g>
+    </g>
+  </g>
+</svg>

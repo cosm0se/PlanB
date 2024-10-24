@@ -71,7 +71,17 @@ class LivresRepository extends AbstractConnexion
 
         // Création des objets Livre et ajout au tableau
         foreach ($livresImportes as $livre) {
-            $newLivre = new Livre($livre['id_livre'], $livre['titre'], $livre['nbre_de_pages'], $livre['url_image'], $livre['text_alternatif'], $livre['description'], $livre['id_utilisateur'], $_SESSION['utilisateur']['identifiant']);
+            $uploader = isset($livre['identifiant']) ? $livre['identifiant'] : "Pas d'uploader";
+            $newLivre = new Livre(
+                $livre['id_livre'],
+                $livre['titre'],
+                $livre['nbre_de_pages'],
+                $livre['url_image'],
+                $livre['text_alternatif'],
+                $livre['id_utilisateur'],
+                $uploader,
+                $livre['description']
+            );
             $this->ajouterLivre($newLivre);
         }
         return $this->getLivres();
