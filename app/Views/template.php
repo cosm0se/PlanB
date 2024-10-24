@@ -29,7 +29,7 @@
     <script src="<?= SITE_URL ?>assets/js/main.js" defer></script>
     <script src="<?= SITE_URL ?>assets/js/observer.js" defer></script>
     <script src="<?= SITE_URL ?>assets/js/voirPlus.js" defer></script>
-    <title>Biblio | <?= $titre; ?></title>
+    <title>FlixBooks | <?= $titre; ?></title>
 </head>
 
 <body>

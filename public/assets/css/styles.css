@@ -69,7 +69,7 @@ textarea {
   margin-top: 5px;
 }
 
-/* style pour le titre de la page */
+/* nav */
 /* Ajuste la taille du logo dans la barre de navigation */
 nav .navbar-brand img {
   height: 50px !important;
@@ -79,6 +79,7 @@ nav .navbar-brand img {
 .bg-dark {
   background-color: #3342fc !important;
 }
+/* style pour le titre de la page */
 /* zone d'affichage du titre */
 .titreprincipal {
   display: flex;
@@ -98,7 +99,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #222021 !important;
+  background-color: #eaeaea !important;
 }
 h1 {
   font-family: "trash" !important;
@@ -237,10 +238,9 @@ h1 {
 #descriptionLivre {
   display: flex;
   padding: 50px;
-  margin: 100px 20px 150px 20px;
+  margin: 25px 50px 50px 50px;
   border-radius: 15px;
   background-color: #3d3d3d;
-  min-height: 300px;
   white-space: pre-line;
 }
 
@@ -257,7 +257,7 @@ footer {
   margin-bottom: inherit !important;
   font-family: "trash";
   font-weight: bold;
-  color: #3342fc;
+  color: #eaeaea;
   font-size: 30px;
   padding: 0 10px;
 }
@@ -265,6 +265,11 @@ footer {
   max-height: 80px;
 }
 
+/* Design responsive */
+/* Design responsive */
+/* Design responsive */
+/* Design responsive */
+/* Design responsive */
 /* Design responsive */
 @media (max-width: 991px) {
   .utilisateur-connecte {
@@ -300,6 +305,7 @@ footer {
   }
   .titreprincipal {
     padding: 10px;
+    height: 75px;
   }
   #signature p {
     font-size: 20px;
@@ -399,5 +405,5 @@ footer {
 }
 
 #container {
-  padding-bottom: 250px;
+  min-height: 81vh;
 }

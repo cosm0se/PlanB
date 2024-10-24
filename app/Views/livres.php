@@ -32,7 +32,7 @@ ob_start() ?>
             <?php
             // Boucle sur chaque livre du tableau
             foreach ($livresTab as $livre) : ?>
-                <tr class="useurs">
+                <tr class="useurs table-active">
                     <!-- Affichage de l'image du livre -->
                     <td class="align-middle"><img
                             src="<?= SITE_URL ?>images/<?= $livre->getUrlImage(); ?>"

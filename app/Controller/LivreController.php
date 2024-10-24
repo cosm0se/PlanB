@@ -50,10 +50,7 @@ class LivreController
         $this->utilisateurController->redirectLogin();
         $livresTab = $this->repositoryLivres->getLivres();
         $pasDeLivre = (count($livresTab) > 0) ? false : true;
-        if (empty($_SESSION['alert'])) $_SESSION['alert'] = [
-            "type" => "success",
-            "message" => "Bienvenue " . $_SESSION['utilisateur']['identifiant']
-        ];
+
         require "../app/Views/livres.php";
     }
 

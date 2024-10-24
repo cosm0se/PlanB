@@ -34,7 +34,7 @@ if (!$pasDutilisateur) : ?>
             <?php
             // Boucle sur chaque utilisateur pour afficher ses informations
             foreach ($utilisateurs as $utilisateur) : ?>
-                <tr class="useurs">
+                <tr class="useurs table-active">
                     <td class="align-middle"><?= $utilisateur->getIdUtilisateur(); ?></td>
                     <td class="align-middle"><?= $utilisateur->getIdentifiant(); ?></td>
                     <td class="align-middle"><?= $utilisateur->getEmail(); ?></td>
