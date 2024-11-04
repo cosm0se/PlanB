@@ -66,7 +66,7 @@ ob_start() ?>
     <?php else : ?>
         <!-- Affichage si aucun livre n'est présent -->
         <div class="d-flex flex-column">
-            <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+            <div class="card text-white bg-info mb-3">
                 <div class="card-header">Votre espace</div>
                 <div class="card-body">
                     <h4 class="card-title">Désolé</h4>

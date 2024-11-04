@@ -11,39 +11,34 @@
  */
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicons pour différentes plateformes -->
-    <link rel="icon" type="image/png" href="<?= SITE_URL ?>assets/favicons/favicon-48x48.png" sizes="48x48" />
+    <meta name="viewport" content="width=device-width, i
+    <link rel=" icon" type="image/png" href="<?= SITE_URL ?>assets/favicons/favicon-48x48.png" sizes="48x48" />
     <link rel="icon" type="image/svg+xml" href="<?= SITE_URL ?>assets/favicons/favicon.svg" />
     <link rel="shortcut icon" href="<?= SITE_URL ?>assets/favicons/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="<?= SITE_URL ?>assets/favicons/apple-touch-icon.png" />
     <link rel="manifest" href="<?= SITE_URL ?>assets/favicons/site.webmanifest" />
-    <!-- Feuilles de style -->
     <link rel="stylesheet" href="https://bootswatch.com/5/superhero/bootstrap.min.css">
     <link rel="stylesheet" href="<?= SITE_URL ?>assets/css/styles.css">
-    <!-- Script JavaScript principal -->
     <script src="<?= SITE_URL ?>assets/js/main.js" defer></script>
     <script src="<?= SITE_URL ?>assets/js/observer.js" defer></script>
     <script src="<?= SITE_URL ?>assets/js/voirPlus.js" defer></script>
     <title>FlixBooks | <?= $titre; ?></title>
+
 </head>
 
 <body>
-    <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
-            <!-- Logo et bouton de navigation pour mobile -->
-            <a class="navbar-brand" href="/"><img src="<?= SITE_URL ?>logo.png" alt=""></a>
+            <a class="navbar-brand" href="/"><img src="<?= SITE_URL ?>flexbooks_white.svg" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
-                    <!-- Liens de navigation -->
                     <li class="nav-item">
                         <a class="nav-link active" href="/">Home
                             <span class="visually-hidden">(current)</span>

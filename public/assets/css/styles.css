@@ -61,6 +61,9 @@ form {
 textarea {
   resize: none;
 }
+label {
+  color: #222021;
+}
 
 /* Style pour les messages d'erreur */
 .error {
@@ -72,7 +75,7 @@ textarea {
 /* nav */
 /* Ajuste la taille du logo dans la barre de navigation */
 nav .navbar-brand img {
-  height: 50px !important;
+  height: 40px !important;
   width: auto;
 }
 /* couleur nav*/
@@ -167,6 +170,12 @@ h1 {
 .livre-image {
   width: 150px;
   height: auto;
+  margin: 10px auto;
+}
+
+.livre-plein {
+  width: auto;
+  height: 400px;
   margin: 10px auto;
 }
 
@@ -336,11 +345,18 @@ footer {
   .livre-title {
     font-size: 1rem;
   }
+  .livre-plein {
+    width: auto;
+    height: 100%;
+  }
 }
 
 /* Design responsive pour la page de détails */
 
 @media (max-width: 768px) {
+  nav .navbar-brand img {
+    height: 35px !important;
+  }
   .livre-container {
     flex-direction: column;
     align-items: flex-start;
@@ -376,6 +392,9 @@ footer {
 }
 
 @media (max-width: 480px) {
+  nav .navbar-brand img {
+    height: 20px !important;
+  }
   .livre-container {
     margin: 10px;
   }
@@ -391,6 +410,9 @@ footer {
   }
 }
 @media (max-width: 360px) {
+  nav .navbar-brand img {
+    height: 18px !important;
+  }
   h1 {
     font-size: 20px;
   }
@@ -406,4 +428,13 @@ footer {
 
 #container {
   min-height: 81vh;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.card-header {
+  width: 100%;
 }

@@ -16,7 +16,7 @@ ob_start();
 <div class="livre-container">
     <div class="livre-image-container">
         <!-- Affichage de l'image du livre -->
-        <img class="livre-image" src="<?= SITE_URL ?>images/<?= $livre->getUrlImage() ?>" alt="<?= $livre->getTextAlternatif() ?>">
+        <img class="livre-plein" src="<?= SITE_URL ?>images/<?= $livre->getUrlImage() ?>" alt="<?= $livre->getTextAlternatif() ?>">
     </div>
     <div class="livre-details">
         <!-- Affichage des détails du livre -->

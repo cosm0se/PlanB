@@ -24,7 +24,7 @@ const observerTitre = new IntersectionObserver(isObserveTitre, {
 });
 observerTitre.observe(animationTitre);
 
-// Nouvelle animation pour les liens au survol
+// animation pour les liens au survol
 const links = document.querySelectorAll("a.livre-link");
 
 links.forEach((link) => {
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Utilise setTimeout pour attendre 500ms avant de changer la couleur
     setTimeout(function () {
-      document.body.style.backgroundColor = "#eaeaea";
+      document.body.style.backgroundColor = "#fff";
     }, 500);
   }
 });
