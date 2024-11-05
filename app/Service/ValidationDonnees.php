@@ -86,7 +86,7 @@ class ValidationDonnees
         if (!preg_match($pattern, $data)) {
             switch ($name) {
                 case 'password':
-                    $this->erreurs[$name][] = "Le mot de passe doit contenir minimum 12 caracteres, minimum 1 caractere special, une majuscule et 1 chiffre";
+                    $this->erreurs[$name][] = "Le mot de passe doit contenir minimum 8 caracteres, minimum 1 caractere special, une majuscule et 1 chiffre";
                     break;
                 case 'identifiant':
                     $this->erreurs[$name][] = "L'identifiant ne correspond pas : pas d'espace, ni de caractères spéciaux";
@@ -95,7 +95,7 @@ class ValidationDonnees
                     $this->erreurs[$name][] = "L' adresse email n'est pas valide";
                     break;
                 case 'titre':
-                    $this->erreurs[$name][] = "Le champ {$name} doit commencer par une lettre majuscule, contenir minimum 3 lettres et maximum 50 lettres, espaces et '-'(tiret du 6) autorisés";
+                    $this->erreurs[$name][] = "Le champ {$name} doit commencer par une lettre majuscule, contenir minimum 3 lettres et maximum 50 lettres, espaces, chiffres et '-'(tiret du 6) autorisés";
                     break;
                 case 'nbre-de-pages':
                     $this->erreurs[$name][] = "Le champ {$name} doit contenir uniquement des chiffres, [min: 1 - max: 10]";

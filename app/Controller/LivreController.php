@@ -90,7 +90,7 @@ class LivreController
         unset($_SESSION['erreurs']);
         unset($_SESSION['old_values']);
         $erreurs = $this->validationDonnees->valider([
-            'titre' => ['match:/^[A-Z][a-zA-Z\- ]{3,50}$/'],
+            'titre' => ['match:/^[A-Z][a-zA-Z0-9\- ]{3,50}$/'],
             'nbre-de-pages' => ['match:/^\d{1,10}$/'],
             'text-alternatif' => ['match:/^[a-zA-Z.\-\'\"\s]{10,150}$/']
         ], $_POST);

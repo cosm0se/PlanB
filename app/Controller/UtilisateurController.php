@@ -127,9 +127,9 @@ class UtilisateurController
         unset($_SESSION['old_values']); // Reset des anciennes valeurs
 
         $erreurs = $this->validationDonnees->valider([
-            'identifiant' => ['match:/^[a-zA-Z\-]+$/'],
+            'identifiant' => ['match:/^[a-zA-Z0-9\-]+$/'],
             'email' => ['match:/^[\w\-\.]+@([\w-]+\.)+[\w-]{2,4}$/'],
-            'password' => (!empty($_POST['password'])) ? ['match:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{12,}$/'] : [],
+            'password' => (!empty($_POST['password'])) ? ['match:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,}$/'] : [],
         ], $_POST);
 
         if ($_POST['password_check'] !== $_POST['password']) {
@@ -270,7 +270,7 @@ class UtilisateurController
         $mail->SMTPAuth = false;  // Pas d'authentification nécessaire pour MailHog
 
         // Paramètres de l'expéditeur et du destinataire
-        $mail->setFrom('noreply@votre-site.com', 'Votre Site');
+        $mail->setFrom('noreply@flixbooks.fr', 'FlixBooks');
         $mail->addAddress($email);  // E-mail du destinataire
 
         // Contenu de l'e-mail

@@ -10,7 +10,7 @@
  * @version 1.0
  */
 
-/* font persos */
+/* --------------------------------------------------font persos */
 @font-face {
   font-family: "anybody";
   src: url("../fonts/anybody.ttf") format("truetype");
@@ -24,40 +24,62 @@
   font-weight: normal;
 }
 
-/* animations pour le fade in des card */
-/* Initialement, les cartes sont cachées */
+/* --------------------------------------------------animations pour le fade in des card */
+/* --------------------------------------------------Initialement, les cartes sont cachées */
 .livre-card {
   opacity: 0;
   transform: translateY(200px); /* Décale légèrement vers le bas */
   transition: opacity 5s ease-out, transform 2s ease-in-out; /* Animation fluide */
 }
 
-/* Classe à ajouter lorsque la carte est visible */
+/* --------------------------------------------------Classe à ajouter lorsque la carte est visible */
 .livre-card.visible {
   opacity: 1; /* Complètement visible */
   transform: translateY(0); /* Ramène à sa position initiale */
 }
 
-/* Réinitialisation des marges et paddings pour tous les éléments */
+/* --------------------------------------------------Réinitialisation des marges et paddings pour tous les éléments */
 * {
   margin: 0;
   padding: 0;
 }
 
-/* S'assure que les images ne dépassent pas leur conteneur */
+/*-------------------------------------------------- S'assure que les images ne dépassent pas leur conteneur */
 img {
   max-width: 100%;
 }
 
-/* Style de base pour les formulaires */
+/* --------------------------------------------------Style de base pour les formulaires */
 form {
   width: 100%;
   max-width: 781px;
   margin: auto;
   padding: 20px 0;
 }
+/* ------------------------------------------------- bouton pas encore inscrit */
+#boutonInscription {
+  margin-top: 100px;
+  border-bottom: #f8c100 10px solid;
+  border-top: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 25px;
+  background-color: #3342fc;
+  transition: all 0.3s;
+  &:hover {
+    background-color: #f8c100;
+    border-top: #3342fc 10px solid;
+    border-bottom: none;
+  }
+}
 
-/* Empêche le redimensionnement des zones de texte */
+a {
+  color: #eaeaea;
+  text-decoration: none;
+}
+
+/* --------------------------------------------------Empêche le redimensionnement des zones de texte */
 textarea {
   resize: none;
 }
@@ -65,25 +87,25 @@ label {
   color: #222021;
 }
 
-/* Style pour les messages d'erreur */
+/* --------------------------------------------------Style pour les messages d'erreur */
 .error {
   color: red;
   font-size: 0.9em;
   margin-top: 5px;
 }
 
-/* nav */
-/* Ajuste la taille du logo dans la barre de navigation */
+/*-------------------------------------------------- nav */
+/*-------------------------------------------------- Ajuste la taille du logo dans la barre de navigation */
 nav .navbar-brand img {
   height: 40px !important;
   width: auto;
 }
-/* couleur nav*/
+/* --------------------------------------------------couleur nav*/
 .bg-dark {
   background-color: #3342fc !important;
 }
-/* style pour le titre de la page */
-/* zone d'affichage du titre */
+/* --------------------------------------------------style pour le titre de la page */
+/* --------------------------------------------------zone d'affichage du titre */
 .titreprincipal {
   display: flex;
   justify-content: center;
@@ -96,13 +118,13 @@ nav .navbar-brand img {
  * Styles pour la page d'accueil
  */
 
-/* Styles globaux */
+/* --------------------------------------------------Styles globaux */
 body {
   font-family: "anybody", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #eaeaea !important;
+  background-color: #eaeaea;
 }
 h1 {
   font-family: "trash" !important;
@@ -116,7 +138,7 @@ h1 {
   justify-content: center;
 }
 
-/* Conteneur pour tous les livres */
+/* --------------------------------------------------Conteneur pour tous les livres */
 .livres-container {
   display: flex;
   flex-wrap: wrap;
@@ -124,7 +146,7 @@ h1 {
   padding: 20px;
   gap: 20px;
 }
-/* contenu pour UN LIVRE EN DETAIL */
+/* --------------------------------------------------contenu pour UN LIVRE EN DETAIL */
 .livre-container {
   display: flex;
   flex-direction: row;
@@ -133,7 +155,7 @@ h1 {
   gap: 20px;
 }
 
-/* Styles pour les cartes de livre */
+/*-------------------------------------------------- Styles pour les cartes de livre */
 .livre-card {
   display: flex;
   flex-direction: column;
@@ -146,16 +168,16 @@ h1 {
   text-align: center;
   overflow: hidden;
   justify-content: space-around;
-  transition: transform 0.2s ease;
+  transition: transform 0.5s ease;
 }
 
-/* Effet de survol sur les cartes de livre */
+/* --------------------------------------------------Effet de survol sur les cartes de livre */
 .livre-card:hover {
   transform: scale(1.05);
   background-color: #eaeaea;
 }
 
-/* Titre du livre */
+/*-------------------------------------------------- Titre du livre */
 .livre-title {
   background-color: #eaeaea;
   color: #222021;
@@ -166,7 +188,7 @@ h1 {
   margin: 0;
 }
 
-/* Image du livre */
+/* --------------------------------------------------Image du livre */
 .livre-image {
   width: 150px;
   height: auto;
@@ -179,7 +201,7 @@ h1 {
   margin: 10px auto;
 }
 
-/* Corps de la carte de livre */
+/* --------------------------------------------------Corps de la carte de livre */
 .livre-body {
   padding: 10px;
 }
@@ -188,7 +210,7 @@ h1 {
   font-size: 13px;
 }
 
-/* Lien vers les détails du livre */
+/* --------------------------------------------------Lien vers les détails du livre */
 .livre-link {
   display: inline-block;
   margin-top: 10px;
@@ -200,15 +222,15 @@ h1 {
   transition: background-color 0.2s ease;
 }
 
-/* Effet de survol sur le lien */
+/* --------------------------------------------------Effet de survol sur le lien */
 .livre-link:hover {
-  background-color: #3342fc !important;
+  background-color: #222021 !important;
 }
 /**
  * Styles pour la page de détails d'un livre
  */
 
-/* Conteneur de l'image */
+/* --------------------------------------------------Conteneur de l'image */
 .livre-image-container {
   width: 100%;
   display: flex;
@@ -216,14 +238,14 @@ h1 {
   align-items: center;
 }
 
-/* Image du livre */
+/* --------------------------------------------------Image du livre */
 .livre-image {
   max-width: 100%;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Conteneur des détails du livre */
+/* --------------------------------------------------Conteneur des détails du livre */
 .livre-details {
   display: flex;
   flex-direction: column;
@@ -237,13 +259,13 @@ h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Paragraphes dans les détails du livre */
+/* -------------------------------------------------- Paragraphes dans les détails du livre */
 .livre-details p {
   font-size: 1.2rem;
   margin: 10px 0;
 }
 
-/* zone de description d'un livre fait par l'auteur */
+/*-------------------------------------------------- zone de description d'un livre fait par l'auteur */
 #descriptionLivre {
   display: flex;
   padding: 50px;
@@ -274,12 +296,8 @@ footer {
   max-height: 80px;
 }
 
-/* Design responsive */
-/* Design responsive */
-/* Design responsive */
-/* Design responsive */
-/* Design responsive */
-/* Design responsive */
+/* ------------------------------------------------Design responsive */
+
 @media (max-width: 991px) {
   .utilisateur-connecte {
     display: none;
@@ -301,7 +319,7 @@ footer {
     margin-bottom: inherit;
   }
 
-  /* gestion responsive du formulaire */
+  /*--------------------------------------------- gestion responsive du formulaire */
   .align-middle,
   .btn-warning,
   .btn-danger {
@@ -351,7 +369,7 @@ footer {
   }
 }
 
-/* Design responsive pour la page de détails */
+/* --------------------------------------------------Design responsive pour la page de détails */
 
 @media (max-width: 768px) {
   nav .navbar-brand img {

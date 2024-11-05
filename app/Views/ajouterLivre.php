@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Vue pour ajouter un nouveau livre
  * 

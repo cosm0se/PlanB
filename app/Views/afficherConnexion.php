@@ -9,19 +9,16 @@
  *
  * @package App\Views
  */
-
 // Début de la capture de sortie
 ob_start();
 
 // Inclusion du fichier pour afficher les alertes
 require '../app/Views/showAlert.php';
 ?>
-
 <div class="d-flex flex-column justify-content-center">
     <form class="m-auto w-50" method="post" action="<?= SITE_URL ?>connexion/v">
         <fieldset>
             <legend>Connexion</legend>
-
             <?php
             // Affichage des erreurs générales de connexion
             if (isset($_SESSION['erreurs']['connexion'])): ?>
@@ -31,7 +28,6 @@ require '../app/Views/showAlert.php';
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
-
             <!-- Champ pour l'email -->
             <div class="form-group">
                 <label for="email" class="form-label mt-4">Email : </label>
@@ -39,7 +35,6 @@ require '../app/Views/showAlert.php';
                     placeholder="Votre adresse mail"
                     value="<?= isset($_SESSION['old_values']['email']) ? htmlspecialchars($_SESSION['old_values']['email']) : '' ?>">
                 <small id="emailHelp" class="form-text text-muted">Saisissez l'adresse mail choisie à l'inscription.</small>
-
                 <?php
                 // Affichage des erreurs spécifiques à l'email
                 if (isset($_SESSION['erreurs']['email'])): ?>
@@ -50,7 +45,6 @@ require '../app/Views/showAlert.php';
                     </div>
                 <?php endif; ?>
             </div>
-
             <!-- Champ pour le mot de passe -->
             <div class="form-group">
                 <label for="password" class="form-label mt-4">Mot de passe : </label>
@@ -66,21 +60,17 @@ require '../app/Views/showAlert.php';
                     </div>
                 <?php endif; ?>
             </div>
-
             <!-- Insertion du jeton CSRF -->
             <?= $csrfToken ?>
-
             <button type="submit" class="btn btn-primary mt-5">Se connecter</button>
+
         </fieldset>
     </form>
+    <div id="boutonInscription"><a id="registration-button" href="<?= SITE_URL ?>/inscription">Pas encore inscrit ?</a></div>
+
 </div>
 
 <?php
-// Définition du titre de la page
 $titre = "Connexion";
-
-// Récupération du contenu mis en mémoire tampon
 $content = ob_get_clean();
-
-// Inclusion du template principal
 require_once 'template.php';
